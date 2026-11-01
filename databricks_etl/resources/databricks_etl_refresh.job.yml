@@ -42,6 +42,11 @@ resources:
             - task_key: notebook_task
           pipeline_task:
             pipeline_id: ${resources.pipelines.databricks_etl_etl.id}
+        - task_key: transactions_summary
+          depends_on:
+            - task_key: notebook_task
+          notebook_task:
+            notebook_path: ../src/transactions_summary.ipynb
 
       environments:
         - environment_key: default
