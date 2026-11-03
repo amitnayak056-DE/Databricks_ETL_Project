@@ -1,4 +1,4 @@
-name: 'prod_deployment'
+lname: 'prod_deployment'
 
 concurrency: 1
 
