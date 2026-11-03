@@ -1,22 +1,22 @@
-name: 'prod_deployment'
+name: prod_deployment
 
-concurrency: 1
+concurrency: prod-deployment
 
-on: 
-  push: 
+on:
+  push:
     branches:
       - main
     paths:
       - 'databricks_etl/**'
 
 jobs:
-  deploy: 
-    name: 'Deploy Bundle'
+  deploy:
+    name: Deploy Bundle
     runs-on: ubuntu-latest
     steps:
       - uses: databricks/setup-cli@main
       - run: databricks bundle deploy
-      working-directory: databricks_etl
-      env: 
-        DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
-        DATABRICKS_BUNDLE_ENV: prod
+        working-directory: databricks_etl
+        env:
+          DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
+          DATABRICKS_BUNDLE_ENV: prod
