@@ -20,4 +20,3 @@ jobs:
       env: 
         DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
         DATABRICKS_BUNDLE_ENV: prod
-    
