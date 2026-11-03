@@ -1,4 +1,4 @@
-name: 'production_deployment'
+name: 'prod_deployment'
 
 concurrency: 1
 
