@@ -9,6 +9,17 @@ on:
     paths:
       - 'databricks_etl/**'
 
+name: 'prod_deployment'
+
+concurrency: 1
+
+on: 
+  push: 
+    branches:
+      - main
+    paths:
+      - 'databricks_etl/**'
+
 jobs:
   deploy: 
     name: 'Deploy Bundle'
