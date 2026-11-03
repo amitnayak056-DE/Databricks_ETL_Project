@@ -13,7 +13,6 @@ jobs:
   deploy: 
     name: 'Deploy Bundle'
     runs-on: ubuntu-latest
-
     steps:
       - uses: databricks/setup-cli@main
       - run: databricks bundle deploy
